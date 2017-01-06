@@ -60,8 +60,9 @@ function interceptFlight() {
     done
 
 
+    DATETIME=$(date "+%Y-%m-%d-%H-%M-%S")
     exec 8<>$NETWORK
-    cat<&8 | grep $ICAO > /home/mao/$1.flight &
+    cat<&8 | grep $ICAO > /home/mao/$1.$DATETIME.flight &
     FILE_RECORD_PID=`expr $! - 1`
 
 
