@@ -22,3 +22,4 @@ Quickly, Excel Figure:
 
 ![Monitor](https://github.com/MaoJianwei/SDN_Scripts/raw/master/aux_picture/NIC_Rx_Tx_figure.png)
 
+![Monitor](https://github.com/MaoJianwei/SDN_Scripts/raw/master/aux_picture/NIC_Rx_Tx_figure_video_server.png)
