@@ -17,3 +17,8 @@ Data file Screenshot:
 Monitor Screenshot:
 
 ![Monitor](https://github.com/MaoJianwei/SDN_Scripts/raw/master/aux_picture/NIC_Rx_Tx_monitor.png)
+
+Quickly, Excel Figure:
+
+![Monitor](https://github.com/MaoJianwei/SDN_Scripts/raw/master/aux_picture/NIC_Rx_Tx_figure.png)
+
