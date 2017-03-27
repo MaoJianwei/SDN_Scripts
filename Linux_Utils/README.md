@@ -2,9 +2,13 @@
 
 monitor one NIC's Rx/Tx rate, and record them in .csv file
 
-Run: "./NIC_rate_recorder_monitor.sh eth1"
+For example, run: 
 
-Data file format: Moment(seconds),RX(Mbps),TX(Mbps)
+    ./NIC_rate_recorder_monitor.sh eth1
+
+Data file format:
+
+    Moment(seconds),RX(Mbps),TX(Mbps)
 
 Data file Screenshot:
 
