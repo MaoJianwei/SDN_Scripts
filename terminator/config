@@ -1,16 +1,21 @@
 [global_config]
+    always_split_with_profile = True
 [keybindings]
-[profiles]
-  [[default]]
-    background_image = None
-    foreground_color = "#ffffff"
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
-      profile = default
+      profile = Mao
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
+[profiles]
+  [[Mao]]
+    palette = "#000000:#CC0000:#4E9A06:#C4A000:#3465A4:#75507B:#06989A:#D3D7CF:#555753:#EF2929:#8AE234:#FCE94F:#729FCF:#AD7FA8:#34E2E2:#EEEEEC"
+    use_system_font = False
+    font = Mono 12
+    background_image = None
+    foreground_color = "#ffffff"
+    scrollback_lines = 3000
