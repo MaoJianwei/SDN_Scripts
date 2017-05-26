@@ -1,0 +1,88 @@
+﻿<!Doctype html>
+<html xmlns=http://www.w3.org/1999/xhtml style="height: 90%">
+    <head>
+        <title>BigMao Schedule Management</title>
+        <script src="/jquery.min.js"></script>
+    </head>
+
+    <body style="height: 100%">
+        <form id="MaoJira" style="height: 100%">
+            <font size="20">任务：</font><br><br>
+            <textarea name="summary" value="测试" placeholder="新任务是啥？" wrap="hard" style="width: 100%; height: 20%; font-size:45px"></textarea><br><br>
+
+			<!-- Mao: You have to adapt these values to your JIRA project !!!-->
+            <font size="20">优先级：</font><br><br>
+            <select style="width: 100%; height: 15%; font-size:45px">
+                <option value="1">紧急</option>
+                <option value="2">严重</option>
+                <option value="3">重要</option>
+                <option value="4">次要</option>
+                <option value="5">微小</option>
+            </select><br><br>
+
+			<!-- Mao: You have to adapt these values to your JIRA project !!!-->
+            <font size="20">年度：</font><br><br>
+            <select style="width: 100%; height: 15%; font-size:45px">
+                <option value="1" disabled="true">2016</option>
+                <option value="4" selected="true">2017</option>
+                <option value="5">2018</option>
+                <option value="6">2019</option>
+                <option value="7">2020</option>
+            </select><br><br>
+
+            <input type="submit" value="添 加 任 务" size="20" style="width: 100%; height: 20%; font-size:45px">
+        </form>
+    </body>
+    <script type="text/javascript">
+        var form = document.getElementById("MaoJira");
+
+        form.onsubmit = function (e) {
+            // stop the regular form submission
+            e.preventDefault();
+
+
+            // collect the form data while iterating over the inputs
+
+            // Mao: You have to adapt these values to your JIRA project !!!
+            var data = {
+              "fields": {
+                "customfield_10005": form[2].options[form[2].selectedIndex].value,
+                "project": {
+                  "id": "10004"
+                },
+                "summary": form[0].value,
+                "issuetype": {
+                  "id": "3"
+                },
+                "assignee": {
+                  "name": "mao"
+                },
+                "reporter": {
+                  "name": "mao"
+                },
+                "priority": {
+                  "id": form[1].options[form[1].selectedIndex].value
+                }
+              }
+            }
+
+            postData(data);
+        }
+
+        function postData(taskData){
+
+				$.ajax({
+                 type: "post",
+                 url: "/postTask.php",
+                 data: JSON.stringify(taskData),
+                 dataType: "json",
+                 success: function (taskData, status, jqXHR) {
+                    alert("添加成功！\n\n任务ID：" + taskData["key"])
+                 },
+
+                 error: function (jqXHR, status) {
+                     alert("添加失败...\n\n" + status.code);
+                 }
+              });
+    </script>
+</html>
