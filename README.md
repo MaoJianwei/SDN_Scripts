@@ -1,4 +1,4 @@
 # SDN_Scripts
-My useful scripts for SDN and Linux
+My useful scripts for SDN, Linux and other platforms(JIRA, etc.)
 
-project review at 2017.03.28
+project review at 2017.05.26
