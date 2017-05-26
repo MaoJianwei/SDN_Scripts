@@ -4,4 +4,4 @@
 
 .
 
-![Demonstration](https://github.com/MaoJianwei/Android_GPS_NMEA_Server_Reader_Sender/raw/master/ScreenShot_Android_GPS_NMEA_Server.jpg)
+![Demonstration](https://raw.githubusercontent.com/MaoJianwei/SDN_Scripts/master/JIRA_RestAPI/Demonstration.png)
