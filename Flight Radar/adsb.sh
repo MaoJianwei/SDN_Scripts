@@ -14,7 +14,7 @@ then
 fi
 
 
-NETWORK="/dev/tcp/10.103.89.247/30003"
+NETWORK="/dev/tcp/flight.maojianwei.com/33333"
 
 
 function interceptALL() {
