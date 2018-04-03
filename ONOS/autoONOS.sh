@@ -1,5 +1,7 @@
 cd /home/mao/onos
 
+# Author Blog:  www.MaoJianwei.com
+
 case $1 in
     -c)
         /tmp/onos-1.13.0-SNAPSHOT/apache-karaf-3.0.8/bin/stop
@@ -18,7 +20,7 @@ git pull origin master
 echo " --- Build new ONOS... ---"
 ./tools/build/onos-buck build onos --show-output
 
-#echo " --- Config firewall... ---"
+#echo " --- Config firewall... (for Centos) ---"
 #echo $1 | sudo -S iptables -I INPUT -p TCP --dport 8181 -j ACCEPT
 #echo $1 | sudo -S iptables -I INPUT -p TCP --dport 6653 -j ACCEPT
 #echo $1 | sudo -S iptables -I INPUT -p TCP --dport 6633 -j ACCEPT
