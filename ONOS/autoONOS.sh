@@ -9,7 +9,7 @@ cd /home/mao/onos
 # First, modify the first line of me. Recommend to put ONOS source code in your home directory
 # 
 # Update, build, and run ONOS:             ./autoONOS.sh
-# Stop ONOS and Clean all executive file:  ./autoONOS.sh -c
+# Stop ONOS and Clean all executive files:  ./autoONOS.sh -c
 # -----------------------------
 
 
