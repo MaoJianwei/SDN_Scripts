@@ -2,6 +2,17 @@ cd /home/mao/onos
 
 # Author Blog:  www.MaoJianwei.com
 
+
+# -----------------------------
+# Usage:
+# 
+# First, modify the first line of me. Recommend to put ONOS source code in your home directory
+# 
+# Update, build, and run ONOS:             ./autoONOS.sh
+# Stop ONOS and Clean all executive file:  ./autoONOS.sh -c
+# -----------------------------
+
+
 case $1 in
     -c)
         /tmp/onos-1.13.0-SNAPSHOT/apache-karaf-3.0.8/bin/stop
