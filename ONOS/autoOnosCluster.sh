@@ -3,7 +3,9 @@
 #
 # Forms ONOS cluster using REST API of each separate instance.
 #
-# Author Blog:  www.MaoJianwei.com
+# Author Blog:    www.MaoJianwei.com
+#
+# Simple usage:   ./autoOnosCluster.sh ip1 ip2 ip3
 #
 # -----------------------------------------------------------------------------
 
