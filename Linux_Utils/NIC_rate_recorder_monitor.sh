@@ -50,3 +50,11 @@ do
     echo ""
     echo "$1_Tx_Mbps:  ${NIC_TX_Rate}"
 done
+
+
+
+# ---- todo ----
+# NIC_PING=`ping -c 1 200.0.0.1`
+# NIC_RTT=$(echo $(expr "${NIC_PING}" : ".*\(time=\([0-9]\)* \).*") | cut -d '=' -f 2)
+# echo $NIC_PING
+# echo $NIC_RTT
