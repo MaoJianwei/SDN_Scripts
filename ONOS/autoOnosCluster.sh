@@ -6,12 +6,13 @@
 # Author Blog:    www.MaoJianwei.com
 #
 # Simple usage:   ./autoOnosCluster.sh ip1 ip2 ip3
+# 
+# Example:        ./autoOnosCluster.sh 192.168.0.1 192.168.0.2 192.168.0.3 192.168.0.4 192.168.0.5
 #
 # -----------------------------------------------------------------------------
 
-
 function usage() {
-    echo "usage: $(basename $0)[-x] [-u user] [-p password] [-s partitionSize] ip1 ip2..." && exit 1
+    echo "usage: ./autoOnosCluster.sh ip1 ip2 ip3 ..." && exit 1
 }
 
 # Scan arguments for user/password or other options...
