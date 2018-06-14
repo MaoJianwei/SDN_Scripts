@@ -21,6 +21,10 @@ case $1 in
         rm -rf /tmp/onos*/
         exit 0
         ;;
+    -t)
+        ./tools/build/onos-buck test
+        exit 0
+        ;;
     *)
         ;;
 esac
