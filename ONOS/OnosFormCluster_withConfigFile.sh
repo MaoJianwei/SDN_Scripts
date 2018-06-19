@@ -1,4 +1,9 @@
 
+# Recommend to use autoOnosCluster.sh
+echo "------  Recommend to use autoOnosCluster.sh  ------"
+
+
+
 # Push Cluster Config by REST API
 # 
 # usage: 
