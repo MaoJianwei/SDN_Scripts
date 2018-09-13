@@ -36,6 +36,7 @@ kubectl create -f aedi.yaml
 # 部分观察：
 # 部署/扩展一个 deployment 到 230 个实例时，两个 Node 节点各108个（共216个），然后就停止了；
 # 当扩展集群到第三个 Node 时，才继续扩展 14 个实例到新 Node 上
+# [总共110个k8s.gcr.io/pause:3.1，即每个Node只能布110个Pod]（不知是不是服务器配置影响，4C8G）
 kubectl scale --replicas=230 deployment/<deployment-name>
 
 # 一些工具命令：
