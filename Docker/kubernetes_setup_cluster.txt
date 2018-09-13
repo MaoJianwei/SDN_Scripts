@@ -29,9 +29,22 @@ sudo kubeadm join <masterIp>:6443 --token xxxxx --discovery-token-cart-hash sha2
 kubectl get node
 
 
+# 提交新服务
+kubectl create -f aedi.yaml
+
+# 伸缩新服务 scale out/in
+# 部分观察：
+# 部署/扩展一个 deployment 到 230 个实例时，两个 Node 节点各108个（共216个），然后就停止了；
+# 当扩展集群到第三个 Node 时，才继续扩展 14 个实例到新 Node 上
+kubectl scale --replicas=230 deployment/<deployment-name>
+
 # 一些工具命令：
 kubectl get all --all-namespaces -o yaml
 kubectl get node
 kubectl get pod --all-namespaces
 kubectl get service --all-namespaces
 sudo docker ps -a
+
+
+
+
