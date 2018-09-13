@@ -1,5 +1,5 @@
 # 主要参考：https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/
-
+# 实践完成：部署了 1个Master、3个Node 的 k8s 集群
 
 
 
@@ -30,6 +30,7 @@ kubectl get node
 
 
 # 一些工具命令：
+kubectl get all --all-namespaces -o yaml
 kubectl get node
 kubectl get pod --all-namespaces
 kubectl get service --all-namespaces
