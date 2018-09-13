@@ -1,0 +1,36 @@
+# 主要参考：https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/
+
+
+
+
+# 搭建 Master 节点
+# --apiserver-advertise-address： 其他 Node 节点连接进 Master 节点的地址，会生成该地址的 SSL 证书
+# --pod-network-cidr：Pod Network 选择 Flannel 时，需要加这个参数
+sudo kubeadm init --apiserver-advertise-address=<masterIp-WAN/LAN-ipv4/ipv6> --pod-network-cidr=10.244.0.0/16
+
+
+# 依 kubeadm init 最后的输出提示，配置 kubectl 连入 k8s-apiserver 时需要的信息，包括证书等
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+# 配置 Pod Network
+# 参考 https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Documentation/kube-flannel.yml
+
+# 在规划为 Node 的节点上执行，搭建 Node 节点并连接 Master（加入 k8s 集群）
+# 注意：<masterIp> 要与 kubeadm init 时的相同，因为涉及 SSL 证书验证
+# 这个命令在 kubeadm init 最后的输出中，直接复制执行即可
+sudo kubeadm join <masterIp>:6443 --token xxxxx --discovery-token-cart-hash sha256:xxxxxxxxxxxxx
+
+
+# 确认集群构建成功，并Ready
+kubectl get node
+
+
+# 一些工具命令：
+kubectl get node
+kubectl get pod --all-namespaces
+kubectl get service --all-namespaces
+sudo docker ps -a
