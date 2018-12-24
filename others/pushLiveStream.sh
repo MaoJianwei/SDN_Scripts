@@ -11,6 +11,7 @@ live_push_code="" # copy from your live platform too
 count=0
 while true
 do
+    # add -re for continuity, when use media file as input
     ffmpeg -stream_loop -1 -i "rtsp://${video_src}:${video_src_port}/" -acodec copy -vcodec copy -f flv -y "${live_addr}/${live_push_code}"
     ((count++))
     echo ""
