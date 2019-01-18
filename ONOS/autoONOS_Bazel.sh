@@ -63,7 +63,7 @@ shift
 
 echo " --- Run ONOS... ---"
 tar -zxf ./bazel-bin/onos.tar.gz -C /tmp/
-/tmp/onos-${ONOS_VERSION}/apache-karaf-${KARAF_VERSION}/bin/start debug
+/tmp/onos-${ONOS_VERSION}/apache-karaf-${KARAF_VERSION}/bin/start debug # Caution! Remote debug is enabled. can delete 'debug' to disable it.
 sleep 3
 /tmp/onos-${ONOS_VERSION}/apache-karaf-${KARAF_VERSION}/bin/status
 exit 0
