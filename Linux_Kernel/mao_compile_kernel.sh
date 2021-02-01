@@ -1,3 +1,4 @@
+
 LOG=/home/mao/mao_kernel_build.html
 
 if [ "$(whoami)" != "root" ]
@@ -7,6 +8,7 @@ then
     exit 1
 fi
 
+CORES=`cat /proc/cpuinfo | grep "processor" | wc -l`
 
 BUILD_TIME=`date`
 echo "============================== Mao Kernel Build - ${BUILD_TIME} =============================="
@@ -16,9 +18,9 @@ echo "============================== Mao Kernel Build - menuconfig  ============
 echo "============================== Mao Kernel Build - menuconfig  ==============================" >> ${LOG}
 make menuconfig
 
-echo "============================== Mao Kernel Build - make -j48  =============================="
-echo "============================== Mao Kernel Build - make -j48  ==============================" >> ${LOG}
-make -j48 >> ${LOG}
+echo "============================== Mao Kernel Build - make -j${CORES}  =============================="
+echo "============================== Mao Kernel Build - make -j${CORES}  ==============================" >> ${LOG}
+make -j${CORES} >> ${LOG}
 
 echo "============================== Mao Kernel Build - make modules_install  =============================="
 echo "============================== Mao Kernel Build - make modules_install  ==============================" >> ${LOG}
