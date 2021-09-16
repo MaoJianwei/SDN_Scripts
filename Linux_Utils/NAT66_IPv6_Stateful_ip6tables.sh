@@ -12,6 +12,8 @@ ip6tables -P OUTPUT ACCEPT
 # obtain global IPv6 address by DHCPv6 (permit DHCPv6 and ICMPv6).
 ip6tables -A INPUT -p ipv6-icmp -j ACCEPT
 ip6tables -A INPUT -p udp -m udp --dport 546 -j ACCEPT
+# send DNS address by DHCPv6
+ip6tables -A INPUT -p udp -m udp --dport 547 -j ACCEPT
 
 ip6tables -A FORWARD -i wlan0 -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 ip6tables -A FORWARD -i eth0 -o wlan0 -j ACCEPT
