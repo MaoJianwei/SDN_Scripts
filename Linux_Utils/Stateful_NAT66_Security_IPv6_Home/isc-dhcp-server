@@ -1,0 +1,8 @@
+
+# modify your /etc/default/isc-dhcp-server
+
+DHCPDv6_CONF=/etc/dhcp/dhcpd6.conf
+
+DHCPDv6_PID=/var/run/dhcpd6.pid
+
+INTERFACESv6="eth0"
